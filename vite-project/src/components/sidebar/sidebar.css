@@ -1,0 +1,57 @@
+.sidebar {
+    width: 250px;
+    background-color: #002244;
+    color: white;
+    display: flex;
+    flex: 0 0 250px;
+    flex-direction: column;
+    justify-content: flex-start; /* Cambiado a flex-start */
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .nav-button {
+    background-color: #005f80; /* Color de fondo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+  }
+  
+  .nav-button:hover {
+    background-color: #008CBA; /* Color al pasar el ratón */
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+  }
+  
+  .nav-links button {
+    background-color: #005f80; /* Color de fondo */
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+  }
+  
+  .nav-links button:hover {
+    background-color: #008CBA; /* Color al pasar el ratón */
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
+  }
+  

@@ -1,0 +1,98 @@
+.formu-login {
+    min-height: 100vh;
+    width: 100vw; /* no 100%, sino 100 viewport width */
+    background-image: url('/src/assets/mi-fondo.jpeg');
+    background-size: cover; /* para que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; 
+    background-position: center;
+    position: relative; /* para que el contenido esté por encima del fondo */
+    display: flex;
+    justify-content: right; /* Alinea el contenido a la derecha */
+    align-items: center; /* Centra verticalmente */
+
+
+    overflow-x: hidden; /* esto también ayuda si había un pequeño scroll horizontal */
+
+  }
+
+.formu-login::before {
+    content: ""; /* Necesario para crear el pseudo-elemento */
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background-color: rgba(181, 177, 177, 0.5); /* Blanco semi-transparente */
+    backdrop-filter: blur(8px); /* Hace que el fondo se vea borroso */
+    z-index: 1;
+  }
+
+  .contenedor-formulario {
+    position: relative; 
+    z-index: 2; /* Asegura que el formulario esté encima del overlay */
+    padding: 5rem; 
+    border-radius: 8px; 
+    width: 500px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+  }
+  .contenedor-formulario h2 {
+    
+        font-size: 1.4rem;
+        color: #244673; /* Azul oscuro */
+        margin-bottom: 1.5rem;
+        text-align: center;
+      
+  }
+  .contenedor-formulario input {
+    width: 70%;
+    padding: 2%;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    font-size: 1rem;
+  }
+  .boton-enviar {
+    width: 74%;
+    padding: 2%;
+    background-color: #244673; /* Azul fuerte */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  
+.boton-enviar:hover {
+    background-color: #1c3659; /* Azul más oscuro al pasar el mouse */
+  }
+
+.contenedor-formulario p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+  }
+  .boton-link {
+    background: none;       /* Sin fondo */
+    border: none;            /* Sin borde */
+    color: #005a0a;          /* Verde */
+    font-size: 0.9rem;       /* Tamaño más pequeño */
+    cursor: pointer;         /* Cursor de mano */
+    margin-top: 1rem;
+  }
+  
+  .boton-link:hover {
+    color: #03790f;          /* Verde más oscuro al pasar el mouse */
+  }
+
+  .contenedor-sin-cuenta {
+    display: flex;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Opcional: centra horizontalmente */
+    gap: 0.5rem; /* Espacio entre el texto y el botón */
+    margin-top: 1rem;}

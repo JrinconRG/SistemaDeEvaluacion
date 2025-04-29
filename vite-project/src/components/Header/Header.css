@@ -1,0 +1,34 @@
+
+  .usuario-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: flex-end; /* Alinea los elementos verticalmente a la derecha */
+    text-align: right; /* Alinea el texto a la derecha */
+  }
+  
+  .nombre {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .correo {
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+  
+  .cerrar-sesion {
+    margin-top: 8px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .cerrar-sesion:hover {
+    background-color: #c9302c;
+  }
+  

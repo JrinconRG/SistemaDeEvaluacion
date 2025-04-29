@@ -1,0 +1,58 @@
+.hallazgo-page {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .main-content {
+    flex: 1;
+    background: #f4f6f8;
+    padding: 2rem;
+  }
+  
+  .form-wrapper {
+    max-width: 600px;
+    margin: 3rem auto;
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .hallazgo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .hallazgo-form h2 {
+    text-align: center;
+    color: #183153;
+    margin-bottom: 1rem;
+  }
+  
+  .hallazgo-form input,
+  .hallazgo-form select,
+  .hallazgo-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    resize: none;
+  }
+  
+  .hallazgo-form button {
+    padding: 0.8rem;
+    background-color: #1e4b8c;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .hallazgo-form button:hover {
+    background-color: #163a6c;
+  }
+  
