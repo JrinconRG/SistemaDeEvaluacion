@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="usuario-info">
-        <div className="correo">📧 {usuario?.email}</div>
+        <div className="correo"> {usuario?.email}</div>
         <button className="cerrar-sesion" onClick={handleLogout}>
           Cerrar sesión
         </button>

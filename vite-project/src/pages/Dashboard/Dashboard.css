@@ -1,97 +1,58 @@
 
-  .sidebar {
-    width: 230px;
-    background-color: #1e3a64;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    text-align: center;
-    
-  }
-  
-  .nav-button {
-    background: none;
-    border: none;
-    color: white;
-    text-align: left;
-    margin-bottom: 20px;
-    cursor: pointer;
-  }
-  
-  .sidebar-info {
-    font-size: 12px;
-    margin-top: auto;
-    margin-bottom: 20px;
-  }
-  
-  .logout-button {
-    background: none;
-    border: 1px solid white;
-    color: white;
-    padding: 8px;
-    cursor: pointer;
-  }
-  
-  .main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .header {
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-icon {
-    width: 40px;
-    height: 40px;
-    background: #ddd;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .main-content {
-    padding: 20px;
-  }
-  
-  .main-buttons {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .main-buttons button {
-    background-color: #0d2c59;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 2px 4px 0 #021933;
-  }
+
+
   .dashboard {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
     display: grid;
-    grid-template-columns: 250px 1fr;  /* 250px para el sidebar, el resto para el contenido */
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    grid-template-columns: 300px 1fr;
+  }
+  .dashboard .main {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  
+/* 4) Zona de contenido que estira */
+
+
+  .header {
+    height: 100px;       /* o el alto que quieras */
+    flex-shrink: 0;     /* no se encoge */
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
   }
   
+
+  .main-buttons{
+    display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+
+
+  }
+.boton-dasboard {
+  
+            background-color: #002244; /* Azul oscuro */
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+          }
+
+.boton-dasboard:hover {
+            background-color: #003366;
+            transform: translateY(-2px);
+          }
+          
+.boton-dasboard:active {
+            transform: scale(0.98);
+          }
