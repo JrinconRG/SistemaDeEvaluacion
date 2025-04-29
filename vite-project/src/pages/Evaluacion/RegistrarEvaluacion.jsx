@@ -32,6 +32,8 @@ export default function RegistrarEvaluacion() {
     }
   });
 
+  const [puntaje, setPuntaje] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name in form.resultados) {
@@ -41,10 +43,33 @@ export default function RegistrarEvaluacion() {
     }
   };
 
+  const calcularPromedioResultados = () => {
+    const valores = {
+      "Insatisfactorio": 1,
+      "Satisfactorio": 2,
+      "Bueno": 3,
+      "Excelente": 4
+    };
+
+    const resultados = form.resultados;
+    const puntuaciones = Object.values(resultados)
+      .map(valor => valores[valor])
+      .filter(v => v); // Evita valores vacíos o inválidos
+
+    const total = puntuaciones.reduce((acc, num) => acc + num, 0);
+    return puntuaciones.length ? total / puntuaciones.length : 0;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const puntaje_promedio = calcularPromedioResultados();
+    setPuntaje(puntaje_promedio);
+
     try {
-      await addDoc(collection(db, "evaluaciones_empleados"), form);
+      await addDoc(collection(db, "evaluaciones_empleados"), {
+        ...form,
+        puntaje_promedio
+      });
       alert("Evaluación guardada");
     } catch (e) {
       console.error("Error al guardar evaluación", e);
@@ -92,18 +117,33 @@ export default function RegistrarEvaluacion() {
             <h3>Resultados</h3>
             <div className="resultados-grid">
               {Object.keys(form.resultados).map((campo) => (
-                <input
-                  key={campo}
-                  name={campo}
-                  placeholder={campo.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
-                  value={form.resultados[campo]}
-                  onChange={handleChange}
-                />
+                <div key={campo}>
+                  <label style={{ fontWeight: "bold" }}>
+                    {campo.replace(/_/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
+                  </label>
+                  <select
+                    name={campo}
+                    value={form.resultados[campo]}
+                    onChange={handleChange}
+                  >
+                    <option value="">Seleccione una opción</option>
+                    <option value="Insatisfactorio">Insatisfactorio</option>
+                    <option value="Satisfactorio">Satisfactorio</option>
+                    <option value="Bueno">Bueno</option>
+                    <option value="Excelente">Excelente</option>
+                  </select>
+                </div>
               ))}
             </div>
 
             <button type="submit">Guardar Evaluación</button>
           </form>
+
+          {puntaje !== null && (
+            <div style={{ marginTop: "1rem", fontWeight: "bold", textAlign: "center", color: "#1e3a5f" }}>
+              Puntaje promedio: {puntaje.toFixed(2)}
+            </div>
+          )}
         </div>
       </div>
     </div>
