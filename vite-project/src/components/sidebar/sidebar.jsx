@@ -12,18 +12,20 @@ const Sidebar = () => {
 
       <button className="nav-button">🔔 Notificaciones</button>
 
-      <div className="sidebar-info">
-        <p>Último reporte generado: XX/XX/XXXX</p>
-        <p>Último acceso: XX/XX/XXXX</p>
-      </div>
+      <div className="sidebar-botton">
+        <div className="sidebar-info">
+          <p>Último reporte generado: XX/XX/XXXX</p>
+          <p>Último acceso: XX/XX/XXXX</p>
+        </div>
 
-      <nav className="nav-links">
-        <button onClick={() => navigate("/RegistrarHallazgo")}>Registrar Hallazgo</button>
-        <button onClick={() => navigate("/acciones")}>Registrar Acciones</button>
-        <button onClick={() => navigate("/empleados")}>Registrar Empleados</button>
-        <button onClick={() => navigate("/evaluacion")}>Registrar Evaluacion</button>
-        <button onClick={() => navigate("/reportes")}>Reportes de Gestión</button>
-      </nav>
+        <nav className="nav-links">
+          <button onClick={() => navigate("/RegistrarHallazgo")}>Registrar Hallazgo</button>
+          <button onClick={() => navigate("/acciones")}>Registrar Acciones</button>
+          <button onClick={() => navigate("/empleados")}>Registrar Empleados</button>
+          <button onClick={() => navigate("/evaluacion")}>Registrar Evaluación</button>
+          <button onClick={() => navigate("/reportes")}>Reportes de Gestión</button>
+        </nav>
+      </div>
     </aside>
   );
 };

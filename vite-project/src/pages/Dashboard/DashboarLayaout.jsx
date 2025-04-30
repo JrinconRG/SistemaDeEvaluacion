@@ -1,37 +1,34 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header.jsx";
-
 import Sidebar from "../../components/sidebar/sidebar.jsx";
 import "./Dashboard.css";
+
 const DashboardLayout = () => {
-  const navigate = useNavigate(); // Añadido hook useNavigate para la navegación
+  const navigate = useNavigate();
 
   return (
     <div className="dashboard">
-      <Sidebar />
+      <Sidebar className="sidebar" />
 
       <div className="main">
-        <Header />
+        <Header className="header" />
 
-        <div className="main-content">
-
-          <div className="main-buttons">
-            <button onClick={() => navigate("/RegistrarHallazgo")}>
-              Auditar procesos
-            </button>
-            <button onClick={() => navigate("/empleados")}>
-              Consultar desempeño de empleados
-            </button>
-            <button onClick={() => navigate("/acciones")}>
-              Registrar oportunidades de mejora
-            </button>
-            <button onClick={() => navigate("/reportes")}>
-              Reportes de gestión
-            </button>
-          </div>
-
-          <Outlet />
+        <div className="main-buttons">
+          <button className="boton-dasboard" onClick={() => navigate("/RegistrarHallazgo")}>
+            Auditar procesos
+          </button>
+          <button className="boton-dasboard" onClick={() => navigate("/empleados")}>
+            Consultar desempeño de empleados
+          </button>
+          <button className="boton-dasboard" onClick={() => navigate("/acciones")}>
+            Registrar oportunidades de mejora
+          </button>
+          <button className="boton-dasboard" onClick={() => navigate("/reportes")}>
+            Reportes de gestión
+          </button>
         </div>
+
+        <Outlet />
       </div>
     </div>
   );
