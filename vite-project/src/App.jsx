@@ -7,15 +7,14 @@ import RegistrarAcciones from "./pages/Acciones/RegistrarAcciones";
 import RegistrarEmpleado from "./pages/Empleado/RegistrarEmpleado";
 import DashboardLayout from "./pages/Dashboard/DashboarLayaout";
 import RegistrarEvaluacion from "./pages/Evaluacion/RegistrarEvaluacion";
+import ReportesAcciones from "./pages/Reportes/ReportesAcciones"; // Asegúrate de que esta ruta sea correcta
 import './App.css'
 
 
 function App() {
-
   return (
     <Router>
             <main className="content">
-
                 <Routes> 
                   <Route path="/" element={<Login />} />
                   <Route path="/registro" element={<Registro />} />
@@ -24,13 +23,9 @@ function App() {
                   <Route path="/empleados" element={<RegistrarEmpleado/>} />
                   <Route path="/dasboard" element={<DashboardLayout/>} />
                   <Route path="/evaluacion" element={<RegistrarEvaluacion />} /> 
-
-
-                  
+                  <Route path="/reportes" element={<ReportesAcciones />} /> 
                 </Routes>
             </main>
-
-      
     </Router>
   )
 }

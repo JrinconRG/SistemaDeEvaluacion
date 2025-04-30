@@ -4,6 +4,8 @@ import Header from "../../components/Header/Header.jsx";
 import Sidebar from "../../components/sidebar/sidebar.jsx";
 import "./Dashboard.css";
 const DashboardLayout = () => {
+  const navigate = useNavigate(); // Añadido hook useNavigate para la navegación
+
   return (
     <div className="dashboard">
       <Sidebar />
@@ -22,6 +24,9 @@ const DashboardLayout = () => {
             </button>
             <button onClick={() => navigate("/acciones")}>
               Registrar oportunidades de mejora
+            </button>
+            <button onClick={() => navigate("/reportes")}>
+              Reportes de gestión
             </button>
           </div>
 

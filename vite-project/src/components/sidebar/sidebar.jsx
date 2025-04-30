@@ -8,7 +8,6 @@ const Sidebar = () => {
     <aside className="sidebar">
       <div className="logo-container">
         <img src="/src/assets/comite1.png" alt="El comite" className="logo" />
-
       </div>
 
       <button className="nav-button">🔔 Notificaciones</button>
@@ -23,6 +22,7 @@ const Sidebar = () => {
         <button onClick={() => navigate("/acciones")}>Registrar Acciones</button>
         <button onClick={() => navigate("/empleados")}>Registrar Empleados</button>
         <button onClick={() => navigate("/evaluacion")}>Registrar Evaluacion</button>
+        <button onClick={() => navigate("/reportes")}>Reportes de Gestión</button>
       </nav>
     </aside>
   );
