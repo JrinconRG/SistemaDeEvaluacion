@@ -8,31 +8,29 @@ import "./RegistrarHallazgo.css";
 export default function RegistrarHallazgo() {
   const [form, setForm] = useState({
     tipo: "Hallazgo",
+    nombre_hallazgo: "",
+    origen_hallazgo: "",
     descripcion: "",
-    estado: "Pendiente",
-    fecha_registro: "",
-    responsable_id: "",
-    fecha_cierre: ""
+    fecha_origen: "",
   });
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await addDoc(collection(db, "hallazgos"), {
+      await addDoc(collection(db, "hallazgo"), {
         ...form,
-        fecha_cierre: form.fecha_cierre || null
       });
       alert("Hallazgo guardado");
-      // Reset form opcional:
       setForm({
         tipo: "Hallazgo",
+        nombre_hallazgo: "",
+        origen_hallazgo: "",
         descripcion: "",
-        estado: "Pendiente",
-        fecha_registro: "",
-        responsable_id: "",
-        fecha_cierre: ""
+        fecha_origen: "",
       });
     } catch (e) {
       console.error("Error al guardar hallazgo", e);
@@ -42,43 +40,60 @@ export default function RegistrarHallazgo() {
   return (
     <div className="hallazgo-page">
       <Sidebar />
+      <Header />
       <div className="main-content">
-        <Header />
         <div className="form-wrapper">
           <form onSubmit={handleSubmit} className="hallazgo-form">
             <h2>Registrar Hallazgo</h2>
+
+            <h5>Nombre</h5>
+            <input
+              type="text"
+              name="nombre_hallazgo"
+              placeholder="Nombre del hallazgo"
+              value={form.nombre_hallazgo}
+              onChange={handleChange}
+            />
+
+            <select
+              name="origen_hallazgo"
+              value={form.origen_hallazgo}
+              onChange={handleChange}
+            >
+              <option value="">Origen/Fuente del Hallazgo</option>
+              <option value="Auditorias Internas de Calidad">
+                Auditorías Internas de Calidad
+              </option>
+              <option value="Auditorias Externas">Auditorias Externas</option>
+              <option value="PQR">PQR</option>
+              <option value="Encuestas de Satisfacción">
+                Encuestas de Satisfacción
+              </option>
+              <option value="Resultado de Indicadores">
+                Resultado de Indicadores
+              </option>
+              <option value="Gestión de Eventos Adversos">
+                Gestión de Eventos Adversos
+              </option>
+              <option value="Rondas de Seguridad">Rondas de Seguridad</option>
+              <option value="Inspecciones de Seguridad">
+                Inspecciones de Seguridad
+              </option>
+            </select>
+
             <textarea
               name="descripcion"
-              placeholder="Descripción"
+              placeholder="Describa la falla de calidad detectada"
               value={form.descripcion}
               onChange={handleChange}
               rows={4}
             ></textarea>
 
-            <select name="estado" value={form.estado} onChange={handleChange}>
-              <option value="Pendiente">Pendiente</option>
-              <option value="En progreso">En progreso</option>
-              <option value="Completada">Completada</option>
-            </select>
-
+            <h5>Fecha en la que se originó el hallazgo</h5>
             <input
               type="date"
-              name="fecha_registro"
-              value={form.fecha_registro}
-              onChange={handleChange}
-            />
-
-            <input
-              name="responsable_id"
-              placeholder="ID Responsable"
-              value={form.responsable_id}
-              onChange={handleChange}
-            />
-
-            <input
-              type="date"
-              name="fecha_cierre"
-              value={form.fecha_cierre}
+              name="fecha_origen"
+              value={form.fecha_origen}
               onChange={handleChange}
             />
 

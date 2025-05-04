@@ -6,7 +6,7 @@ import RegistrarHallazgo from "./pages/RegistrarHallazgo/RegistrarHallazgo";
 import RegistrarAcciones from "./pages/Acciones/RegistrarAcciones";
 import RegistrarEmpleado from "./pages/Empleado/RegistrarEmpleado";
 import DashboardLayout from "./pages/Dashboard/DashboarLayaout";
-import RegistrarEvaluacion from "./pages/Evaluacion/RegistrarEvaluacion";
+import PlanDeMejora from "./pages/Evaluacion/RegistrarPlandeMejora";
 import './App.css'
 
 
@@ -23,7 +23,7 @@ function App() {
                   <Route path="/acciones" element={<RegistrarAcciones />} />
                   <Route path="/empleados" element={<RegistrarEmpleado/>} />
                   <Route path="/dasboard" element={<DashboardLayout/>} />
-                  <Route path="/evaluacion" element={<RegistrarEvaluacion />} /> 
+                  <Route path="/plandemejora" element={<PlanDeMejora />} /> 
 
 
                   

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { db } from "../../firebase/firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 import Header from "../../components/Header/Header.jsx";
+import AccionesList from "../../components/Listado/AccionesList.jsx";
 
 import Sidebar from "../../components/sidebar/sidebar.jsx";
 import "./RegistrarAcciones.css";
@@ -32,9 +33,10 @@ export default function RegistrarAcciones() {
 
   return (
     <div className="acciones-page">
-      <Sidebar className="sidebar" />
+      <Sidebar/>
+      <Header />
       <div className="main-content">
-        <Header />
+        
         <div className="form-wrapper">
           <form onSubmit={handleSubmit} className="acciones-form">
             <h2>Registrar Acción</h2>
@@ -64,6 +66,10 @@ export default function RegistrarAcciones() {
             <button type="submit">Guardar</button>
           </form>
         </div>
+        <div className="acciones-lista-wrapper">
+            <h2>Lista de Acciones</h2>
+            <AccionesList />
+            </div>
       </div>
     </div>
   );

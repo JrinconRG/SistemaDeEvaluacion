@@ -2,14 +2,22 @@
 
 /* 1) Haz que el contenedor de la página sea un Grid de dos columnas */
 .acciones-page {
-    display: grid;
-    grid-template-columns: 250px 1fr;  /* 250px para el sidebar, el resto para el contenido */
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: 
+    "sidebar header"
+    "sidebar main";
+  height: 100vh;
+  width: 100vw;
+}
+.main-content {grid-area: main;
+padding: 2rem;
+background-color: #f9f9f9;
+overflow-y: auto;
+}
+
+
   
   /* 2) Sidebar en la primera columna */
   .acciones-page .sidebar {
@@ -83,4 +91,20 @@
   .acciones-page .acciones-form button:hover {
     background-color: #163a6c;
   }
+  .sidebar {
+    grid-area: sidebar;
+    background-color: #002244;
+    color: white;
+    height: 100%;
+  }
   
+  /* Header */
+  .header {
+    grid-area: header;
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+  }

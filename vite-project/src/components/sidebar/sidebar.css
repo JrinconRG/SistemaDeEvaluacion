@@ -1,69 +1,88 @@
+/* Sidebar */
 .sidebar {
-    width: 300px;
-    background-color: #002244;
-    justify-content: space-between;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrado horizontalmente */
-    padding-bottom: 20px;
-    height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #002244;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Centra todos los elementos dentro del sidebar */
+  padding: 1rem;
+  z-index: 1000;
+  justify-content: space-between; /* Espacio entre el logo, los botones y la información */
+  
+
 }
-  
-  .logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 0;
-    width: 100%;
-    height: 150px; /* Altura del contenedor del logo */
-  }
-  
-  .logo {
-    height: auto;
-  width: 70%; 
 
-  }
+/* Logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+}
 
-  .nav-button {
-    color: #ffffff;
-    background-color: transparent; ; /* Color de fondo */
-    width: 80%;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px 0;
-    border-radius: 8px; /* Bordes redondeados */
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
-  }
-  
-  .nav-button:hover {
-    background-color: #008CBA; /* Color al pasar el ratón */
-    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
-  }
-  
-  .nav-links button {
-    background-color: #005f80; /* Color de fondo */
-    width: 80%;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border-radius: 8px; /* Bordes redondeados */
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
-  }
-  
-  .nav-links button:hover {
-    background-color: #008CBA; /* Color al pasar el ratón */
-    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
-  }
-  
-  .sidebar-info {
-    text-align: center;
-    font-size: 0.85rem;
-    color: #ccc;
-    margin-bottom: 1rem;
-  }
+.logo {
+  width: 70%;  /* Ajusta el tamaño del logo */
+  cursor: pointer;
+}
+
+/* Botón principal (Notificaciones) */
+.nav-button {
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  gap: 0.5rem;
+  color: #ffffff;
+  background-color: transparent;
+  width: 80%;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #008CBA;
+  transform: scale(1.05);
+}
+
+.nav-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 2px;
+}
+
+/* Botones de navegación */
+.nav-links button {
+  background-color: #005f80;
+  width: 80%;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links button:hover {
+  background-color: #008CBA;
+  transform: scale(1.05);
+}
+
+/* Información de la sidebar */
+.sidebar-info {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}

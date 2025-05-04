@@ -32,3 +32,13 @@
     background-color: #c9302c;
   }
   
+.header {
+  height: 100px;
+  flex-shrink: 0;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

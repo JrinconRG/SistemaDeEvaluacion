@@ -1,58 +1,70 @@
 
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: 
+    "sidebar header"
+    "sidebar main";
+  height: 100vh;
+  width: 100vw;
+}
 
+/* Sidebar */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #002244;
+  color: white;
+  height: 100%;
+}
 
-  .dashboard {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-  }
-  .dashboard .main {
-    display: flex;
-    flex-direction: column;
-  }
+/* Header */
+.header {
+  grid-area: header;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
 
+/* Contenido principal */
+.main-content {
+  grid-area: main;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+}
 
-  
-/* 4) Zona de contenido que estira */
-
-
-  .header {
-    height: 100px;       /* o el alto que quieras */
-    flex-shrink: 0;     /* no se encoge */
-    border-bottom: 1px solid #ccc;
-    padding: 20px;
-  }
-  
-
-  .main-buttons{
-    display: flex;
+/* Botones */
+.main-buttons {
+  display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-top: 2rem;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
 
+.boton-dashboard {
+  background-color: #002244;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
 
-  }
-.boton-dasboard {
-  
-            background-color: #002244; /* Azul oscuro */
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 0.75rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
-          }
+.boton-dashboard:hover {
+  background-color: #003366;
+  transform: translateY(-2px);
+}
 
-.boton-dasboard:hover {
-            background-color: #003366;
-            transform: translateY(-2px);
-          }
-          
-.boton-dasboard:active {
-            transform: scale(0.98);
-          }
+.boton-dashboard:active {
+  transform: scale(0.98);
+}
+

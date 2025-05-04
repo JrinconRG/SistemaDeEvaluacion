@@ -31,8 +31,9 @@ export default function RegistrarEmpleado() {
   return (
     <div className="empleado-page">
       <Sidebar />
+      <Header />
       <div className="main-content">
-        <Header />
+        
         <div className="form-wrapper">
           <form onSubmit={handleSubmit} className="empleado-form">
             <h2>Registrar Empleado</h2>

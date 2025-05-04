@@ -6,14 +6,17 @@ const Sidebar = () => {
 
   return (
     <aside className="sidebar">
+      
       <div className="logo-container">
-        <img src="/src/assets/comite1.png" alt="El comite" className="logo" />
+        <img src="/src/assets/comite1.png" alt="El comite" className="logo"  onClick={() => navigate("/dasboard")}/>
         </div>
 
       
       
 
-      <button className="nav-button">🔔</button>
+      <button className="nav-button">
+        <img src="/src/assets/campana.png" alt="Inicio" className="campana" style={{ width: "1.5rem", height: "1.5rem" ,padding:"2px"}}  />
+         Notificaciones</button>
      
       <div className="sidebar-botton">
     
@@ -26,7 +29,7 @@ const Sidebar = () => {
         <button onClick={() => navigate("/RegistrarHallazgo")}>Registrar Hallazgo</button>
         <button onClick={() => navigate("/acciones")}>Registrar Acciones</button>
         <button onClick={() => navigate("/empleados")}>Registrar Empleados</button>
-        <button onClick={() => navigate("/evaluacion")}>Registrar Evaluacion</button>
+        <button onClick={() => navigate("/plandemejora")}>Registrar Evaluacion</button>
       </nav>
         </div>
     </aside>
