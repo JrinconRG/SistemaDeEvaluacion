@@ -18,11 +18,14 @@ const DashboardLayout = () => {
           <button className="boton-dashboard" onClick={() => navigate("/mejora_info")}>
             Consultar desempeño de empleados
           </button>
-          <button className="boton-dashboard" onClick={() => navigate("/plandemejora")}>
-            Registrar planes de mejora
+          <button className="boton-dashboard" onClick={() => navigate("/RegistrarHallazgo")}>
+            Registrar oportunidades de mejora
           </button>
           <button className="boton-dashboard" onClick={() => navigate("/indicadores")}>
             Ver indicadores de desempeño
+          </button>
+          <button className="boton-dashboard" onClick={() => navigate("/reportes")}>
+            Generar reportes
           </button>
         </div>
         <Outlet />
