@@ -15,10 +15,10 @@ const DashboardLayout = () => {
           <button className="boton-dashboard" onClick={() => navigate("/RegistrarHallazgo")}>
             Auditar procesos
           </button>
-          <button className="boton-dashboard" onClick={() => navigate("/empleados")}>
+          <button className="boton-dashboard" onClick={() => navigate("/mejora_info")}>
             Consultar desempeño de empleados
           </button>
-          <button className="boton-dashboard" onClick={() => navigate("/acciones")}>
+          <button className="boton-dashboard" onClick={() => navigate("/RegistrarHallazgo")}>
             Registrar oportunidades de mejora
           </button>
         </div>

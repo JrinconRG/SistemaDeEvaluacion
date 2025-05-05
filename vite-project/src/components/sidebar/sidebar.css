@@ -22,12 +22,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
-  width: 100%;
+
 }
 
 .logo {
-  width: 70%;  /* Ajusta el tamaño del logo */
+  width: 100%;  /* Ajusta el tamaño del logo */
   cursor: pointer;
 }
 

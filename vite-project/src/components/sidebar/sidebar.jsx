@@ -27,8 +27,7 @@ const Sidebar = () => {
 
       <nav className="nav-links">
         <button onClick={() => navigate("/RegistrarHallazgo")}>Registrar Hallazgo</button>
-        <button onClick={() => navigate("/acciones")}>Registrar Acciones</button>
-        <button onClick={() => navigate("/empleados")}>Registrar Empleados</button>
+        <button onClick={() => navigate("/mejora_info")}>Actualizar plan de mejora </button>
         <button onClick={() => navigate("/plandemejora")}>Registrar Evaluacion</button>
       </nav>
         </div>
