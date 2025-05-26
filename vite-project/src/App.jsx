@@ -6,6 +6,7 @@ import RegistrarHallazgo from "./pages/RegistrarHallazgo/RegistrarHallazgo";
 import PlanMejoraInfo from "./pages/Plan_mejora_info/PlanMejoraInfo";
 import DashboardLayout from "./pages/Dashboard/DashboarLayaout";
 import PlanDeMejora from "./pages/Evaluacion/RegistrarPlandeMejora";
+import ListadoPlanesdeAccion from "./pages/ListadoPlanesdeAccion/ListadoPlanesdeAccion";
 import './App.css'
 
 
@@ -22,6 +23,7 @@ function App() {
                   <Route path="/mejora_info" element={<PlanMejoraInfo/>} />
                   <Route path="/dasboard" element={<DashboardLayout/>} />
                   <Route path="/plandemejora" element={<PlanDeMejora />} /> 
+                  <Route path="/listado" element={<ListadoPlanesdeAccion/>} />
 
 
                   

@@ -8,8 +8,8 @@ const Sidebar = () => {
     <aside className="sidebar">
       
       <div className="logo-container">
-        <img src="/src/assets/comite1.png" alt="El comite" className="logo"  onClick={() => navigate("/dasboard")}/>
-        </div>
+        <img src="/src/assets/Logo.png" alt="El comite" className="logo"  onClick={() => navigate("/dasboard")}/>
+      </div>
 
       
       
@@ -25,11 +25,7 @@ const Sidebar = () => {
         <p>Último acceso: XX/XX/XXXX</p>
       </div>
 
-      <nav className="nav-links">
-        <button onClick={() => navigate("/RegistrarHallazgo")}>Registrar Hallazgo</button>
-        <button onClick={() => navigate("/mejora_info")}>Actualizar plan de mejora </button>
-        <button onClick={() => navigate("/plandemejora")}>Registrar Evaluacion</button>
-      </nav>
+      
         </div>
     </aside>
   );

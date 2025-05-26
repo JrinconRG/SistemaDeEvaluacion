@@ -7,56 +7,58 @@
       "sidebar header"
       "sidebar main";
     height: 100vh;
-    width: 100vw;}
-  
-  /* Contenido a la derecha del sidebar */
-  .main-content {
-    grid-area: main;
-  padding: 2rem;
-  background-color: #f9f9f9;
-  overflow-y: auto;
+    width: 100vw;
 }
 
-  /* Envolver el formulario con un centro elegante */
-  .form-wrapper {
-    max-width: 600px;
+/* Contenido a la derecha del sidebar */
+.main-content {
+    grid-area: main;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+}
+
+/* Envolver el formulario con un centro elegante */
+.form-wrapper {
     margin: 3rem auto;
     background: white;
     padding: 2rem 2.5rem;
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .form-wrapper h2{
+    width: 100%;
+    max-width: 1000px;
+}
+
+.form-wrapper h2 {
     color: #183153;
-    margin-bottom: 20px;	
-  }
-  
-  /* Estilo general del formulario */
-  .evaluacion-form {
+    margin-bottom: 20px;
+}
+
+/* Estilo general del formulario */
+.evaluacion-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
-  
-  /* Título del formulario */
-  .evaluacion-form h2 {
-    text-align: left;
+}
 
+/* Título del formulario */
+.evaluacion-form h2 {
+    text-align: left;
     color: #183153;
     margin-bottom: 1rem;
-  }
-  
-  /* Inputs y select */
-  .evaluacion-form input,
-  .evaluacion-form select {
+}
+
+/* Inputs y select */
+.evaluacion-form input,
+.evaluacion-form select {
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 0.5rem;
     font-size: 1rem;
-  }
-  
-  /* Botón principal */
-  .evaluacion-form button {
+}
+
+/* Botón principal */
+.evaluacion-form button {
     padding: 0.8rem;
     background-color: #163a6c;
     color: white;
@@ -65,14 +67,14 @@
     border-radius: 0.5rem;
     cursor: pointer;
     transition: background 0.3s ease;
-  }
-  
-  .evaluacion-form button:hover {
+}
+
+.evaluacion-form button:hover {
     background-color: #163a6c;
-  }
-  
-  /*Donde van la cars y el formulario*/
-  .container-info{
+}
+
+/* Donde van la cars y el formulario */
+.container-info {
     display: flex;
     gap: 100px;
     justify-content: center;
@@ -81,36 +83,31 @@
     align-content: center;
     text-align: left;
     margin-top: 3rem;
+}
 
-    }
-
-  .info-card:nth-child(1){
+.info-card:nth-child(1) {
     border-radius: 10px;
     width: 800px;
     height: auto;
     padding: 2rem;
     border-radius: 1.5rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    
+}
 
-    
-  }
-  .info-card h2 {
+.info-card h2 {
     margin-bottom: 1rem;
     font-size: 1.5rem;
     color: #183153;
-  }
-  
-  .info-card p {
+}
+
+.info-card p {
     margin-bottom: 0.75rem;
     font-size: 1rem;
     color: #333;
-  }
-  .form-container:nth-child(2){
-    text-align: left ;
+}
 
+.form-container:nth-child(2) {
+    text-align: left;
     padding: 20px;
     width: 1000px;
-  
-    
-  }
+}

@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
+import "./PlanesMejoraList.css";
 
 export default function PlanesMejoraList() {
   const [planes, setPlanes] = useState([]);
+  const [loading, setLoading] = useState(true); // 🟡 Nuevo estado
 
   const fetchPlanes = async () => {
     try {
@@ -15,6 +17,8 @@ export default function PlanesMejoraList() {
       setPlanes(lista);
     } catch (error) {
       console.error("Error al obtener planes de mejora:", error);
+    } finally {
+      setLoading(false); // ✅ Finaliza la carga
     }
   };
 
@@ -22,30 +26,87 @@ export default function PlanesMejoraList() {
     fetchPlanes();
   }, []);
 
+  if (loading) {
+    return null; // o <p>Cargando...</p>
+  }
+
+  if (!loading && planes.length === 0) {
+    return <p>No hay planes de mejora registrados.</p>;
+  }
+
+
+
   return (
-    <div className="planes-lista">
-      <h3>Planes de Mejora Registrados</h3>
-      {planes.length === 0 ? (
-        <p>No hay planes de mejora registrados.</p>
-      ) : (
-        <ul>
+    <div className="property-list">
+      
+        <div className="property-list">
           {planes.map((plan) => (
-            <li key={plan.id} style={{ marginBottom: "1rem" }}>
-              <strong>Fallas Calidad:</strong> {plan.fallas_calidad}<br />
-              <strong>Tipo Acción:</strong> {plan.tipo_accion}<br />
-              <strong>Atributo Calidad:</strong> {plan.atributo_calidad}<br />
-              <strong>Fecha Inicio:</strong> {plan.fecha_inicio}<br />
-              <strong>Fecha Final:</strong> {plan.fecha_final}<br />
-              <strong>Proceso Responsable:</strong> {plan.proceso_responsable}<br />
-              <strong>Persona Responsable:</strong> {plan.persona_responsable}<br />
-              <strong>Razones:</strong> {plan.razones}<br />
-              <strong>Meta Acción:</strong> {plan.meta_accion}<br />
-              <strong>Actividades Mejora:</strong> {plan.actividades_mejora}<br />
-              <strong>Hallazgo ID:</strong> {plan.hallazgo_id}
-            </li>
+            <div key={plan.id} className="property-card">
+              <li>
+
+                <div><strong>Fallas Calidad:</strong>
+                <span>{plan.fallas_calidad}</span>
+                </div>
+
+                <div>
+                <strong>Tipo Acción:</strong>
+                <span>{plan.tipo_accion}</span>
+
+                </div>
+
+                <div>
+                <strong>Atributo Calidad:</strong>
+                <span>{plan.atributo_calidad}</span>
+                
+                </div>
+
+                <div>
+                <strong>Fecha Inicio:</strong>
+                <span>{plan.fecha_inicio}</span>
+                
+                </div>
+
+                <div>
+                <strong>Fecha Final:</strong>
+                <span>{plan.fecha_final}</span>
+                
+                </div>
+
+                <div>
+                <strong>Proceso Responsable:</strong>
+                <span>{plan.proceso_responsable}</span>
+                </div>
+
+                <div>
+                <strong>Persona Responsable:</strong>
+                <span>{plan.persona_responsable}</span>
+                </div>
+
+                <div>
+                <strong>Razones:</strong>
+                <span>{plan.razones}</span>
+                </div>
+
+                <div>
+                <strong>Meta Acción:</strong>
+                <span>{plan.meta_accion}</span>
+                
+                </div>
+
+                <div>
+                <strong>Actividades Mejora:</strong>
+                <span>{plan.actividades_mejora}</span>
+                </div>
+
+                <div>
+                <strong>Hallazgo ID:</strong>
+                <span>{plan.hallazgo_id}</span>
+                </div>
+              </li>
+            </div>
           ))}
-        </ul>
-      )}
+        </div>
+      
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { db } from "../../firebase/firebaseConfig";
 import { collection, addDoc, getDocs , doc,getDoc,setDoc} from "firebase/firestore";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/sidebar/sidebar";
-import "./RegistrarEmpleado.css"; // Crea el CSS si deseas estilos personalizados
+import "./PlanMejoraInfo.css"; // Crea el CSS si deseas estilos personalizados
 
 export default function PlanMejoraInfo() {
   const [planes, setPlanes] = useState([]);

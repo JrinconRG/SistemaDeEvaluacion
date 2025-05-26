@@ -1,44 +1,67 @@
 
-  .usuario-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centra los elementos verticalmente */
-    align-items: flex-end; /* Alinea los elementos verticalmente a la derecha */
-    text-align: right; /* Alinea el texto a la derecha */
-  }
-  
-  .nombre {
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  .correo {
-    font-size: 0.9rem;
-    margin-top: 4px;
-  }
-  
-  .cerrar-sesion {
-    margin-top: 8px;
-    background-color: #d9534f;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-  }
-  
-  .cerrar-sesion:hover {
-    background-color: #c9302c;
-  }
-  
 .header {
-  height: 100px;
-  flex-shrink: 0;
-  border-bottom: 1px solid #ccc;
-  background-color: white;
-  padding: 20px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; /* Menú a la izquierda, usuario a la derecha */
   align-items: center;
+  height: 100px;
+  padding: 0 20px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+}
+.boton-menu{
+  padding-right: 50px;
+}
+
+/* Menú de navegación */
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-links button {
+  background-color: #005f80;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links button:hover {
+  background-color: #008CBA;
+  transform: scale(1.05);
+}
+
+/* Info del usuario */
+.usuario-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 4px;
+}
+
+.usuario-info .nombre {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.usuario-info .correo {
+  font-size: 0.9rem;
+}
+
+.usuario-info .cerrar-sesion {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.usuario-info .cerrar-sesion:hover {
+  background-color: #c9302c;
 }
