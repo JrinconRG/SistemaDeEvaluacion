@@ -7,6 +7,8 @@ import PlanMejoraInfo from "./pages/Plan_mejora_info/PlanMejoraInfo";
 import DashboardLayout from "./pages/Dashboard/DashboarLayaout";
 import PlanDeMejora from "./pages/Evaluacion/RegistrarPlandeMejora";
 import ListadoPlanesdeAccion from "./pages/ListadoPlanesdeAccion/ListadoPlanesdeAccion";
+import GenerarReportes from "./pages/GenerarReportes/GenerarReportes"; // Importamos el nuevo componente
+import IndicadoresDesempeno from "./components/Indicadores/IndicadoresDesempeno"; // Asegúrate de importar este también si lo tienes
 import './App.css'
 
 
@@ -24,9 +26,9 @@ function App() {
                   <Route path="/dasboard" element={<DashboardLayout/>} />
                   <Route path="/plandemejora" element={<PlanDeMejora />} /> 
                   <Route path="/listado" element={<ListadoPlanesdeAccion/>} />
+                  <Route path="/reportes" element={<GenerarReportes />} /> {/* Nueva ruta */}
+                  <Route path="/indicadores" element={<IndicadoresDesempeno />} /> {/* Para asegurarse de que existe */}
 
-
-                  
                 </Routes>
             </main>
 

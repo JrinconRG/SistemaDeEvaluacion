@@ -19,6 +19,7 @@ const Header = () => {
         <button onClick={() => navigate("/mejora_info")}>Actualizar plan de mejora </button>
         <button onClick={() => navigate("/plandemejora")}>Registrar Evaluacion</button>
         <button onClick={() => navigate("/listado")}>Listado de planes de mejora</button>
+        <button onClick={() => navigate("/reportes")}>Generar reportes</button>
         </nav>
           </div>
 
