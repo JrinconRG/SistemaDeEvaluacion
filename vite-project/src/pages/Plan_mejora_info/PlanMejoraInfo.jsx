@@ -14,6 +14,7 @@ export default function PlanMejoraInfo() {
     porcentaje_cumplimiento: "",
     soporte_evidencia: "",
     eficaz: "",
+    fecha_actualizacion: "",
   });
 
   // Cargar planes de mejora para el select
@@ -22,8 +23,11 @@ export default function PlanMejoraInfo() {
       const snapshot = await getDocs(collection(db, "planes_mejora"));
       const lista = snapshot.docs.map(doc => ({
         id: doc.id,
-        nombre: doc.data().fallas_calidad || "Sin nombre"
+        nombre: doc.data().fallas_calidad || "Sin nombre",
+
       }));
+
+
       setPlanes(lista);
     };
 
@@ -48,6 +52,7 @@ export default function PlanMejoraInfo() {
           porcentaje_cumplimiento: "",
           soporte_evidencia: "",
           eficaz: "",
+          fecha_actualizacion: "",
         });
       }
       console.log(docSnap.exists(), docSnap.data())
@@ -55,6 +60,9 @@ export default function PlanMejoraInfo() {
 
     fetchInfo();
   }, [planId]);
+
+  const estaCerrado = info?.estado_accion?.toLowerCase() === "cerrada";
+
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -81,6 +89,8 @@ export default function PlanMejoraInfo() {
 
 
 
+
+
   return (
     <div className="evaluacion-page">
       <Sidebar />
@@ -89,9 +99,8 @@ export default function PlanMejoraInfo() {
         <div className="form-wrapper">
           <h2 >Seguimiento a Plan de Mejora</h2>
 
-          <label>Seleccionar Plan de Mejora</label>
-          <select value={planId} onChange={handlePlanChange}>
-            <option value="">-- Seleccione un plan --</option>
+          <select value={planId} onChange={handlePlanChange}  >
+            <option value="">-- Seleccione un plan de Mejora --</option>
           
             {planes.map((p) => (
               <option key={p.id} value={p.id}>
@@ -108,23 +117,26 @@ export default function PlanMejoraInfo() {
                   <p><strong>% Cumplimiento:</strong> {info.porcentaje_cumplimiento}</p>
                   <p><strong>Soporte:</strong> {info.soporte_evidencia}</p>
                   <p><strong>¿Eficaz?:</strong> {info.eficaz}</p>
+                  <p><strong>Fecha de ultima Actualización:</strong> {info.fecha_actualizacion}</p>
                 </div>
               )}
 
 
               <div className="form-container">
-          <form onSubmit={handleSubmit} className="evaluacion-form">
+          <form onSubmit={handleSubmit} className="evaluacion-form" >
             <h2 style={{ textAlign: "left" }}>Información Post Implementación del Plan de Mejora</h2>
 
             
 
             <label>Estado de la Acción de Mejoramiento</label>
-            <select name="estado_accion" value={form.estado_accion} onChange={handleChange}>
+            <select name="estado_accion" value={form.estado_accion} onChange={handleChange} disabled={estaCerrado}>
               <option value="">Seleccione estado</option>
               <option value="Abierta">Abierta</option>
               <option value="En ejecucion">En ejecucion</option>
               <option value="Cerrada">Cerrada</option>
+
             </select>
+
 
             <label>Porcentaje de Cumplimiento</label>
             <input
@@ -135,6 +147,7 @@ export default function PlanMejoraInfo() {
               value={form.porcentaje_cumplimiento}
               onChange={handleChange}
               placeholder="Ej: 80"
+              disabled={estaCerrado}
             />
 
             <label>Soporte y/o Evidencia</label>
@@ -144,16 +157,31 @@ export default function PlanMejoraInfo() {
               onChange={handleChange}
               rows={4}
               placeholder="Describa o adjunte la evidencia"
+              disabled={estaCerrado}
             />
 
             <label>¿Fue Eficaz?</label>
-            <select name="eficaz" value={form.eficaz} onChange={handleChange}>
+            <select name="eficaz" value={form.eficaz} onChange={handleChange} disabled={estaCerrado}>
               <option value="">Seleccione una opción</option>
               <option value="Sí">Sí</option>
               <option value="No">No</option>
+              <option value="No aplica">Aún no evaluado</option>
             </select>
 
-            <button type="submit">Guardar Información</button>
+            <label>Fecha de Actualización</label>
+            <input
+              type="date"
+              name="fecha_actualizacion"
+              value={form.fecha_actualizacion} 
+              onChange={handleChange}
+              disabled={estaCerrado}
+
+              />
+
+
+            <button type="submit" disabled={estaCerrado}>Guardar Información</button>
+
+            {estaCerrado && <p style={{ color: "gray", marginTop: "10px" }}><i>Este plan ya fue completado. No se puede editar.</i></p>}
             </form>
             </div>
             </div>

@@ -84,7 +84,6 @@
     color: #005a0a;          /* Verde */
     font-size: 0.9rem;       /* Tamaño más pequeño */
     cursor: pointer;         /* Cursor de mano */
-    margin-top: 1rem;
   }
   
   .boton-link:hover {
@@ -96,4 +95,5 @@
     align-items: center; /* Centra verticalmente */
     justify-content: center; /* Opcional: centra horizontalmente */
     gap: 0.5rem; /* Espacio entre el texto y el botón */
-    margin-top: 1rem;}
+    margin-top: 1rem;
+  }

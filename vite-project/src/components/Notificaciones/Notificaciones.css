@@ -1,0 +1,60 @@
+/* Contenedor general de cada sección de notificaciones */
+.notif-section {
+    background-color: #f9f9f9;
+    border-left: 6px solid transparent;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .notif-section:hover {
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+  }
+  
+  /* Colores para cada tipo */
+  .vencidas {
+    background-color: #ffe6e6;
+    border-left-color: #e53e3e; /* rojo */
+  }
+  
+  .proximas {
+    background-color: #fff8e1;
+    border-left-color: #d69e2e; /* amarillo oscuro */
+  }
+  
+  .sin-actualizar {
+    background-color: #e6f0ff;
+    border-left-color: #3182ce; /* azul */
+  }
+  
+  /* Título de cada sección */
+  .notif-title {
+    font-weight: 700;
+    font-size: 1.25rem; /* 20px */
+    margin-bottom: 12px;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* Lista de notificaciones */
+  .notif-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: inherit;
+    font-size: 1rem; /* 16px */
+    line-height: 1.5;
+  }
+  
+  /* Texto para días dentro de la lista */
+  .dias {
+    font-weight: 600;
+    color: #555;}
+
+    .notif-list li {
+        text-align: justify;
+      }
+      

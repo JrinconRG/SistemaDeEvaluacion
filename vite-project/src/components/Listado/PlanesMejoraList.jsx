@@ -2,29 +2,51 @@ import { useEffect, useState } from "react";
 import { db } from "../../firebase/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import "./PlanesMejoraList.css";
+import ListadoDescripcion from "../ListadoDescripcion/ListadoDescripcion";
+
 
 export default function PlanesMejoraList() {
   const [planes, setPlanes] = useState([]);
   const [loading, setLoading] = useState(true); // 🟡 Nuevo estado
+  const [planSeleccionado, setPlanSeleccionado] = useState(null);
+
+
 
   const fetchPlanes = async () => {
     try {
+      // 1. Obtener todos los planes
       const querySnapshot = await getDocs(collection(db, "planes_mejora"));
-      const lista = querySnapshot.docs.map((doc) => ({
+      const listaPlanes = querySnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
       }));
-      setPlanes(lista);
+
+      // 2. Obtener info de estado (todos los documentos de info)
+      const infoSnapshot = await getDocs(collection(db, "planes_mejora_info"));
+      const infoPorPlan = {};
+      infoSnapshot.docs.forEach((doc) => {
+        const data = doc.data();
+        infoPorPlan[data.id_plan_mejora] = data.estado_accion;
+      });
+
+      // 3. Mezclar estado en la lista de planes
+      const listaConEstado = listaPlanes.map((plan) => ({
+        ...plan,
+        estado_accion: infoPorPlan[plan.id] || "desconocido",
+      }));
+
+      setPlanes(listaConEstado);
     } catch (error) {
-      console.error("Error al obtener planes de mejora:", error);
+      console.error("Error al obtener planes:", error);
     } finally {
-      setLoading(false); // ✅ Finaliza la carga
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     fetchPlanes();
   }, []);
+
 
   if (loading) {
     return null; // o <p>Cargando...</p>
@@ -34,6 +56,8 @@ export default function PlanesMejoraList() {
     return <p>No hay planes de mejora registrados.</p>;
   }
 
+  
+
 
 
   return (
@@ -41,8 +65,13 @@ export default function PlanesMejoraList() {
       
         <div className="property-list">
           {planes.map((plan) => (
-            <div key={plan.id} className="property-card">
+            <div key={plan.id} className={`property-card ${plan.estado_accion === "Cerrada" ? "cerrada" : ""}`}
+            onClick={() => setPlanSeleccionado(plan)} style={{ cursor: "pointer" }} >
               <li>
+
+              {plan.estado_accion === "Cerrada" && <h5 className="etiqueta-cerrado">Cerrado</h5>}
+
+
 
                 <div><strong>Fallas Calidad:</strong>
                 <span>{plan.fallas_calidad}</span>
@@ -98,13 +127,17 @@ export default function PlanesMejoraList() {
                 <span>{plan.actividades_mejora}</span>
                 </div>
 
-                <div>
-                <strong>Hallazgo ID:</strong>
-                <span>{plan.hallazgo_id}</span>
-                </div>
+               
               </li>
             </div>
           ))}
+          {planSeleccionado && (
+            <ListadoDescripcion
+              plan={planSeleccionado}
+              onClose={() => setPlanSeleccionado(null)}
+            />
+          )}
+
         </div>
       
     </div>

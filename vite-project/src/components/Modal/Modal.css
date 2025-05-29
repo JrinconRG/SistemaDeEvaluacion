@@ -1,0 +1,44 @@
+.modal.d-block {
+    display: block !important;
+    background: rgba(0, 0, 0, 0.759); /* Fondo semi-transparente */
+    text-align: center;
+
+  }
+  
+.modal.d-none {
+    display: none;
+  }
+  
+
+.segundo-titulo-modal{
+    text-align: left;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.btn-close {
+    position: absolute;
+    top: 20px;
+    left:  12px;
+    font-size: 10px;
+   
+
+    }
+
+.modal-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0 auto;
+    color: #000;
+ }
+ .modal-content {
+    width: 800px; /* O usa 1000px, 1200px, etc. */
+    max-width: 1200px;
+    margin: 100px auto; /* Centra horizontalmente */
+    border-radius: 10px;
+    padding: 8px;
+    color: #000;
+    font-size: 17px;
+  }
+  

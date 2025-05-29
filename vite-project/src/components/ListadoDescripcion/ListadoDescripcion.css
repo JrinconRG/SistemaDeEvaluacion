@@ -1,0 +1,78 @@
+.plan-detalle-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .plan-card {
+    background: white;
+    padding: 20px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+  }
+  
+  .plan-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .plan-card h3 {
+    font-size:22px;
+    margin-bottom: 12px;
+    padding-left: 8px;
+  }
+
+  .plan-content {
+    text-align: justify;
+  }
+  
+  .plan-content p {
+    margin: 8px 0;
+    line-height: 1.5;
+    font-size: 16px;
+    color: #000;
+  }
+  
+  .plan-content span {
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .hallazgo {
+    border-left: 6px solid #9b59b6;
+  }
+
+  .hallazgo h3 {
+    color: #511668;
+  }
+
+  
+  .mejora {
+    border-left: 6px solid #27ae60;
+  }
+  
+  .actualizacion {
+    border-left: 6px solid #e67e22;
+  }
+  
+  .cumplimiento-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-left: 8px;
+    font-size: 0.95rem;
+    color: white;
+  }
+  
+  
+  
+  .loading-text {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
