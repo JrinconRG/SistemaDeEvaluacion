@@ -79,3 +79,36 @@ img.logo{
   color: #ccc;
   width: 100%;
 }
+
+.boton-menu {
+  padding: 0 20px;
+}
+
+/* Menú de navegación */
+.nav-links {
+  display: flex;
+  flex-direction: column; /* Botones en columna */
+  gap: 16px; /* Espacio entre botones */
+  align-items: flex-start; /* Alinear a la izquierda, puedes usar center si prefieres */
+}
+
+.nav-links button {
+  background: linear-gradient(135deg, #007a9e, #00b4d8);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%; /* Que ocupen todo el ancho disponible */
+  max-width: 300px; /* Opcional: limita el ancho */
+}
+
+.nav-links button:hover {
+  background: linear-gradient(135deg, #00b4d8, #007a9e);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}

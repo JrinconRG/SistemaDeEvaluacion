@@ -52,9 +52,17 @@
   .mejora {
     border-left: 6px solid #27ae60;
   }
+
+  .mejora h3 {
+    color: #0c5028;
+  }
   
   .actualizacion {
     border-left: 6px solid #e67e22;
+  }
+
+  .actualizacion h3 {
+    color: #85440e;
   }
   
   .cumplimiento-tag {

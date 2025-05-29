@@ -13,15 +13,7 @@ const Header = () => {
 
   return (
     <header className="header">
-        <div className="boton-menu">
-        <nav className="nav-links">
-        <button onClick={() => navigate("/RegistrarHallazgo")}>Registrar Hallazgo</button>
-        <button onClick={() => navigate("/plandemejora")}>Registrar Plan de Mejora</button>
-        <button onClick={() => navigate("/mejora_info")}>Actualizar plan de mejora </button>
-        <button onClick={() => navigate("/listado")}>Listado de planes de mejora</button>
-        <button onClick={() => navigate("/reportes")}>Generar reportes</button>
-        </nav>
-          </div>
+        
 
         <div className="usuario-info">
 

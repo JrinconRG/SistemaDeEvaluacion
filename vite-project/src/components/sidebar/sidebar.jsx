@@ -13,6 +13,15 @@ const Sidebar = () => {
       <div className="logo-container">
         <img src="/src/assets/Logo.png" alt="El comite" className="logo"  onClick={() => navigate("/dasboard")}/>
       </div>
+      <div className="boton-menu">
+        <nav className="nav-links">
+        <button onClick={() => navigate("/RegistrarHallazgo")}>Registrar Hallazgo</button>
+        <button onClick={() => navigate("/plandemejora")}>Registrar Plan de Mejora</button>
+        <button onClick={() => navigate("/mejora_info")}>Actualizar plan de mejora </button>
+        <button onClick={() => navigate("/listado")}>Visualizar planes de mejora</button>
+        <button onClick={() => navigate("/reportes")}>Generar reportes</button>
+        </nav>
+          </div>
 
       
       
@@ -38,8 +47,7 @@ const Sidebar = () => {
         show={mostrarModal}
         onClose={() => setMostrarModal(false)}
       />
-        <p>Último reporte generado: XX/XX/XXXX</p>
-        <p>Último acceso: XX/XX/XXXX</p>
+       
       </div>
 
       

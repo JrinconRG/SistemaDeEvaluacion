@@ -8,32 +8,6 @@
   background-color: white;
   border-bottom: 1px solid #ccc;
 }
-.boton-menu{
-  padding-right: 100px;
-}
-
-/* Menú de navegación */
-.nav-links {
-  display: flex;
-  gap: 12px;
-}
-
-.nav-links button {
-  background-color: #005f80;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.nav-links button:hover {
-  background-color: #008CBA;
-  transform: scale(1.05);
-}
-
 /* Info del usuario */
 .usuario-info {
   display: flex;

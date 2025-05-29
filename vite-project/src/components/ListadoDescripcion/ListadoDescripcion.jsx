@@ -62,7 +62,7 @@ export default function ListadoDescripcion({ plan, onClose }) {
       ) : (
         <div className="plan-detalle-container">
           <section className="plan-card hallazgo">
-            <h3>🔍 Hallazgo Relacionado</h3>
+            <h3>Hallazgo Relacionado</h3>
             {hallazgo ? (
               <div className="plan-content">
                 <p><span>Nombre:</span> {hallazgo.nombre_hallazgo}</p>
@@ -76,7 +76,7 @@ export default function ListadoDescripcion({ plan, onClose }) {
           </section>
     
           <section className="plan-card mejora">
-            <h3>🛠️ Plan de Mejora</h3>
+            <h3>Plan de Mejora</h3>
             <div className="plan-content">
               <p><span>Fallas Calidad:</span> {plan.fallas_calidad}</p>
               <p><span>Tipo Acción:</span> {plan.tipo_accion}</p>
@@ -91,7 +91,7 @@ export default function ListadoDescripcion({ plan, onClose }) {
           </section>
     
           <section className="plan-card actualizacion">
-            <h3>📝 Actualización del Plan</h3>
+            <h3>Actualización del Plan</h3>
             {plan_info ? (
               <div className="plan-content">
                 <p><span>Estado:</span> {plan_info.estado_accion}</p>
