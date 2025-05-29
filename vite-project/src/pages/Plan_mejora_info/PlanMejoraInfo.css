@@ -27,9 +27,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 1000px;
-
 }
-.form-wrapper select{
+
+.form-wrapper select {
     width: 300px;
     text-align: center;
     padding: 10px;
@@ -58,11 +58,18 @@
 
 /* Inputs y select */
 .evaluacion-form input,
-.evaluacion-form select {
+.evaluacion-form select,
+.evaluacion-form textarea {
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 0.5rem;
     font-size: 1rem;
+    width: 100%;
+}
+
+.evaluacion-form textarea {
+    resize: vertical;
+    min-height: 100px;
 }
 
 /* Botón principal */
@@ -75,13 +82,21 @@
     border-radius: 0.5rem;
     cursor: pointer;
     transition: background 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem auto;
 }
 
 .evaluacion-form button:hover {
-    background-color: #163a6c;
+    background-color: #1a4a8c;
 }
 
-/* Donde van la cars y el formulario */
+.evaluacion-form button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Donde van la cards y el formulario */
 .container-info {
     display: flex;
     gap: 100px;
@@ -91,6 +106,58 @@
     align-content: center;
     text-align: left;
     margin-top: 3rem;
+}
+
+/* Estilos para la tarjeta de información */
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+}
+
+.info-card h2 {
+    color: #183153;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.info-card p {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.info-card strong {
+    color: #163a6c;
+}
+
+/* Estilos para el formulario de evaluación */
+.form-container {
+    flex: 1;
+    max-width: 600px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Estilos para campos requeridos */
+.evaluacion-form textarea[required] {
+    border-left: 3px solid #163a6c;
+}
+
+/* Estilos para mensajes de estado */
+.evaluacion-form p[style*="color: gray"] {
+    text-align: center;
+    font-style: italic;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
 }
 
 .info-card:nth-child(1) {
@@ -108,19 +175,6 @@
         transform: translateY(-5px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
-
-
-.info-card h2 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    color: #183153;
-}
-
-.info-card p {
-    margin-bottom: 0.75rem;
-    font-size: 1rem;
-    color: #333;
-}
 
 .form-container:nth-child(2) {
     text-align: left;

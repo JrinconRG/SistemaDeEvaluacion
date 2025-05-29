@@ -1,13 +1,25 @@
-
 .header {
   display: flex;
-  justify-content: space-between; /* Menú a la izquierda, usuario a la derecha */
+  justify-content: space-between;
   align-items: center;
   height: 100px;
   padding: 0 20px;
   background-color: white;
   border-bottom: 1px solid #ccc;
 }
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 /* Info del usuario */
 .usuario-info {
   display: flex;

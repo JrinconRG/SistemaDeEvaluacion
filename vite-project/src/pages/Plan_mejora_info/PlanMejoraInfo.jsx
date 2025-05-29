@@ -15,6 +15,7 @@ export default function PlanMejoraInfo() {
     soporte_evidencia: "",
     eficaz: "",
     fecha_actualizacion: "",
+    justificacion_efectividad: "", // Nuevo campo para la justificación
   });
 
   // Cargar planes de mejora para el select
@@ -53,6 +54,7 @@ export default function PlanMejoraInfo() {
           soporte_evidencia: "",
           eficaz: "",
           fecha_actualizacion: "",
+          justificacion_efectividad: "",
         });
       }
       console.log(docSnap.exists(), docSnap.data())
@@ -79,7 +81,7 @@ export default function PlanMejoraInfo() {
     try {
       await setDoc(doc(db, "planes_mejora_info", planId), {
         ...form,
-        id_plan_mejora: planId, // 👈 esto añade la referencia al plan original
+        id_plan_mejora: planId,
       });
       alert("Información guardada exitosamente");
     } catch (error) {
@@ -117,6 +119,7 @@ export default function PlanMejoraInfo() {
                   <p><strong>% Cumplimiento:</strong> {info.porcentaje_cumplimiento}</p>
                   <p><strong>Soporte:</strong> {info.soporte_evidencia}</p>
                   <p><strong>¿Eficaz?:</strong> {info.eficaz}</p>
+                  <p><strong>Justificación:</strong> {info.justificacion_efectividad}</p>
                   <p><strong>Fecha de ultima Actualización:</strong> {info.fecha_actualizacion}</p>
                 </div>
               )}
@@ -161,12 +164,31 @@ export default function PlanMejoraInfo() {
             />
 
             <label>¿Fue Eficaz?</label>
-            <select name="eficaz" value={form.eficaz} onChange={handleChange} disabled={estaCerrado}>
+            <select 
+              name="eficaz" 
+              value={form.eficaz} 
+              onChange={handleChange} 
+              disabled={!estaCerrado}
+            >
               <option value="">Seleccione una opción</option>
               <option value="Sí">Sí</option>
               <option value="No">No</option>
               <option value="No aplica">Aún no evaluado</option>
             </select>
+
+            {estaCerrado && (
+              <>
+                <label>Justificación de la Efectividad</label>
+                <textarea
+                  name="justificacion_efectividad"
+                  value={form.justificacion_efectividad}
+                  onChange={handleChange}
+                  rows={4}
+                  placeholder="Justifique por qué la acción fue efectiva o no efectiva"
+                  required={estaCerrado && form.eficaz !== ""}
+                />
+              </>
+            )}
 
             <label>Fecha de Actualización</label>
             <input
@@ -179,9 +201,11 @@ export default function PlanMejoraInfo() {
               />
 
 
-            <button type="submit" disabled={estaCerrado}>Guardar Información</button>
+            <button type="submit" disabled={estaCerrado && !form.eficaz}>
+              {estaCerrado ? "Evaluar Efectividad" : "Guardar Información"}
+            </button>
 
-            {estaCerrado && <p style={{ color: "gray", marginTop: "10px" }}><i>Este plan ya fue completado. No se puede editar.</i></p>}
+            {estaCerrado && <p style={{ color: "gray", marginTop: "10px" }}><i>Este plan está cerrado. Por favor, evalúe su efectividad.</i></p>}
             </form>
             </div>
             </div>
