@@ -13,15 +13,14 @@
   padding: 1rem;
   z-index: 1000;
   justify-content: space-between; /* Espacio entre el logo, los botones y la información */
-  
-
+  overflow-y: auto;
 }
 
 .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 0 0 20px 0;
   width: 100%;
 }
 
@@ -78,18 +77,24 @@ img.logo{
   font-size: 0.85rem;
   color: #ccc;
   width: 100%;
+  margin-top: auto;
 }
 
 .boton-menu {
   padding: 0 20px;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Menú de navegación */
 .nav-links {
   display: flex;
-  flex-direction: column; /* Botones en columna */
-  gap: 16px; /* Espacio entre botones */
-  align-items: flex-start; /* Alinear a la izquierda, puedes usar center si prefieres */
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  width: 100%;
 }
 
 .nav-links button {
@@ -98,17 +103,130 @@ img.logo{
   border: none;
   padding: 12px 20px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  width: 100%; /* Que ocupen todo el ancho disponible */
-  max-width: 300px; /* Opcional: limita el ancho */
+  width: 100%;
+  text-align: center;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-links button:hover {
   background: linear-gradient(135deg, #00b4d8, #007a9e);
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.02);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Sección de empleados */
+.menu-section {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.section-title {
+  color: #00b4d8;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 15px 0;
+  padding: 10px 0;
+  border-bottom: 2px solid #00b4d8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-section button {
+  background: linear-gradient(135deg, #27ae60, #229954);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.menu-section button:hover {
+  background: linear-gradient(135deg, #229954, #1e8449);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(39, 174, 96, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .nav-links button,
+  .menu-section button {
+    flex: 1;
+    min-width: 140px;
+    margin: 5px;
+  }
+  
+  .menu-section {
+    margin: 10px 0;
+  }
+  
+  .section-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Animaciones */
+.nav-links button,
+.menu-section button {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover effects mejorados */
+.nav-links button:active,
+.menu-section button:active {
+  transform: translateY(0) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+/* Separador visual */
+.nav-links::after {
+  content: '';
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00b4d8, transparent);
+  margin: 10px auto;
+  border-radius: 1px;
 }

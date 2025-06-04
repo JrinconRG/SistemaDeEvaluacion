@@ -1,7 +1,7 @@
 // src/firebase/firebaseConfig.js
 import { initializeApp } from "firebase/app";
 import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
-import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, updateDoc, query, where } from "firebase/firestore";
 
 // Tu configuración de Firebase
 const firebaseConfig = {
@@ -26,6 +26,6 @@ setPersistence(auth, browserLocalPersistence)
 // Firestore
 const db = getFirestore(app);
 
-export { app, auth, db, collection, getDocs, addDoc };
+export { app, auth, db, collection, getDocs, addDoc, deleteDoc, doc, updateDoc, query, where };
 
 export default app; 

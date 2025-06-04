@@ -9,8 +9,14 @@ import PlanDeMejora from "./pages/Evaluacion/RegistrarPlandeMejora";
 import ListadoPlanesdeAccion from "./pages/ListadoPlanesdeAccion/ListadoPlanesdeAccion";
 import GenerarReportes from "./pages/GenerarReportes/GenerarReportes"; // Importamos el nuevo componente
 import IndicadoresDesempeno from "./components/Indicadores/IndicadoresDesempeno"; // Asegúrate de importar este también si lo tienes
-import './App.css'
 
+// Nuevos imports para el sistema de empleados
+import RegistroEmpleado from "./pages/RegistroEmpleado/RegistroEmpleado";
+import ListaEmpleados from "./pages/RegistroEmpleado/ListaEmpleados";
+import EvaluacionEmpleado from "./pages/Evaluacion/EvaluacionEmpleado";
+import PlanMejoraEmpleado from "./pages/Evaluacion/PlanMejoraEmpleado";
+
+import './App.css'
 
 function App() {
 
@@ -29,6 +35,11 @@ function App() {
                   <Route path="/reportes" element={<GenerarReportes />} /> {/* Nueva ruta */}
                   <Route path="/indicadores" element={<IndicadoresDesempeno />} /> {/* Para asegurarse de que existe */}
 
+                  {/* Nuevas rutas para el sistema de empleados */}
+                  <Route path="/registro-empleado" element={<RegistroEmpleado />} />
+                  <Route path="/lista-empleados" element={<ListaEmpleados />} />
+                  <Route path="/evaluacion-empleado/:empleadoId" element={<EvaluacionEmpleado />} />
+                  <Route path="/plan-mejora-empleado/:empleadoId" element={<PlanMejoraEmpleado />} />
                 </Routes>
             </main>
 

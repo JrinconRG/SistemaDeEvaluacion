@@ -19,6 +19,14 @@ const Sidebar = () => {
         <button onClick={() => navigate("/plandemejora")}>Registrar Plan de Mejora</button>
         <button onClick={() => navigate("/mejora_info")}>Actualizar plan de mejora </button>
         <button onClick={() => navigate("/listado")}>Visualizar planes de mejora</button>
+        
+        {/* Sección de Empleados */}
+        <div className="menu-section">
+          <h4 className="section-title">Gestión de Empleados</h4>
+          <button onClick={() => navigate("/registro-empleado")}>Registrar Empleado</button>
+          <button onClick={() => navigate("/lista-empleados")}>Lista de Empleados</button>
+        </div>
+        
         <button onClick={() => navigate("/reportes")}>Generar reportes</button>
         </nav>
           </div>
